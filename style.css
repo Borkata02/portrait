@@ -1,7 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
   }
-  
+  /* Centering all the tags in the middle and setting a color for the page */
   body {
     display: flex;
     justify-content: center;
@@ -12,7 +12,7 @@
     background: rgb(30,1,251);
 background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%, rgba(9,162,247,1) 30%, rgba(7,225,246,1) 40%, rgba(14,249,227,1) 50%, rgba(7,225,246,1) 60%, rgba(9,162,247,1) 70%, rgba(12,121,250,1) 80%, rgba(20,88,242,1) 90%, rgba(30,1,251,1) 100%);
   }
-  
+  /* Making a some kind of human shaped head with border-radius with 4 valurs srarting from the top-left, top-right, bottom-left, bottm-right */
   .head {
     background: rgb(247, 220, 207);
     width: 300px;
@@ -24,19 +24,15 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     border: 2px solid rgb(211, 160, 136);
     
   }
-  
-  .eyes {
-    position: absolute;
-    width: 195px;
-    display: flex;
-    justify-content: space-between;
-  }
+  /* Tha class eyes is holding two individual classes called eye here we are making how big we want them and making space between as much as the site allowes with justify content. Same goes for the brows */
+  .eyes,
   .brows{
     position: absolute;
     width: 195px;
     display: flex;
     justify-content: space-between;
   }
+/* Styling the eyes with white background and somewhat realistic color for the edge of the eyes for a contrast */
   .eye {
     background-color: white;
     height: 40px;
@@ -50,7 +46,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     overflow: hidden;
     position: relative;
   }
-  
+  /* We are using the pseudo class before to make the iris and linear gradient generator which is made to a circle form */
   .eye::before {
     content: '';
     position: absolute;
@@ -62,6 +58,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     margin-left: 5px;
     margin-bottom: -5px;
   }
+  /* We are setting a keyframes animation for the eyelid to blink */
   @keyframes blink {
     0%{
         top: -40px;
@@ -73,6 +70,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
         top: -40px;
     }
   }
+  /* We are making here the eyelid to be positioned over the eye behind the face and when we activate the animation with z-index it pops up over the eye to give the blink effect */
   .eye:first-child .blink{
     position: absolute;
     height: 40px;
@@ -84,6 +82,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     border-bottom: 1px solid #000;
     animation:  blink 2s 3;
   }
+  /* With after we are making the pupils */
   .eye::after {
     content: '';
     position: absolute;
@@ -94,6 +93,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     margin-left: 5px;
     margin-bottom: -5px;
   }
+  /* We are setting a keyframes animation for the brows to go up and down */
   @keyframes browUp {
        0%{
         top: 0px;
@@ -115,7 +115,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
        }
 
   }
-
+/* Styling the brows and activating the animation */
   .brow{
     width: 65px;
     height: 32px;
@@ -129,7 +129,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     animation-duration: 0.5s;
     animation-iteration-count: 3;
   }
-
+/* Making the "U" shaped nose */
   .nose {
     position: relative;
     border: 4px solid rgb(211, 160, 136);
@@ -139,6 +139,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     border-top: none;
     margin-top: 100px;
   }
+  /* Adding the middle part of the nose to make it some kind of realistic(Please dont get angry if it looks to you like someting else :D) */
   .nose::before{
     content: '';
     position: absolute;
@@ -153,6 +154,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     background-color: rgb(247, 220, 207);
 
   }
+  /* Setting the animation to smile */
   @keyframes smile {
     0%{
         border-radius: 7px 7px 100px 100px;
@@ -188,6 +190,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     border-radius: 7px 7px 100px 100px;
     }
   }
+  /* Making and styling the mouth nothing interesting or fancy here, then calling the animation*/
   .mouth {
     position: absolute;
     width: 100px;
@@ -247,6 +250,8 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     border: 1px solid #000;
     border-radius: 100%;
   }
+
+  /* Making the top hair */
   .hair {
     position: absolute;
     width: 300px;
@@ -256,7 +261,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     border-radius: 100% 100% 0 0;
     bottom: 255px
   }
-  
+  /* Making the sideburns */
   .hair::before,
   .hair::after {
     content: '';
@@ -267,16 +272,16 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
     bottom: -70px;
     border-radius: 0% 0% 20% 20%;
   }
-  
+  /* Pushing the after sideburn to go to the right */
   .hair::after {
     right: 0;
   }
-  
+  /* Making an extra hair corner */
   .hair-corner {
     position: absolute;
     width: 100%;
   }
-  
+  /* Rotating the corners to it can fit where the sideburn and the top hair connects to give it a little bit of realism */
   .hair-corner::before,
   .hair-corner::after {
     content: '';
@@ -350,20 +355,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
       border-top: 40px solid rgb(247, 220, 207);
       left: 196px;
   }
-  @keyframes wave {
-    0% { 
-		transform: rotate(0deg) translate(0px);
-		transform-origin: 0% 0%
-	}
-	50% { 
-		transform: rotate(120deg) translate(0px);
-		transform-origin: 0% 0%
-	}
-	100% { 
-		transform: rotate(0deg) translate(0px);
-		transform-origin: 0% 0%
-	}
-  }
+  /* Setting the animation for the upperarm to imitate the waving effect, for that we are using the rotate style  */
   @keyframes upperarm {
     0% { 
 		transform: rotate(0deg) translate(0px);
@@ -379,6 +371,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
 		transform-origin: 0% 0%
 	}
   }
+  /* Setting the animation for the forearm to imitate the waving effect and go along with the upperarm, for that we are using the rotate style with different degree and some manipulations as top and right */
   @keyframes forearm {
     0% { 
 		transform: rotate(0deg) translate(0px);
@@ -399,6 +392,7 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
         right: -180px;
 	}
   }
+  /* Setting the animation for the hand to imitate waving effect and go along with the forearm , for that we are using the rotate style and some manipulations as top and right */
   @keyframes hand {
     0% { 
 		transform: rotate(0deg) translate(0px);
@@ -445,6 +439,61 @@ background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%,
 
     animation:  hand 2s infinite;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 930px) {
+    .head {
+      width: 260px;
+      height: 300px
+    }
 
+    .eyes,
+    .brows{
+      width: 165px;
+    }
+
+    .eye {
+      height: 30px;
+      width: 50px;
+    }
+
+    .eye::before {
+      width: 30px;
+      height: 30px;
+    }
+
+    .brow{
+      width: 50px;
+      height: 32px;
+    }
+
+    .ears {
+      width: 300px;
+    }
+
+    .ear {
+      height: 50px;
+    }
+
+    .ear:first-child::before{
+      bottom: 13px;
+    }
+    .ear:nth-child(2)::before{
+      bottom: 13px;
+    }
+
+    .hair {
+      width: 260px;
+      bottom: 235px
+    }
+
+    .neck{
+      bottom: 276px;
+    }
+
+    .body{
+      bottom: 76px;
+    }
+
+    .collar{
+        left: 196px;
+    }
   }
